@@ -4,7 +4,7 @@
 
 ### backend --> `3000`
 
-### database --> `7501`
+### database --> `5432`
 
 #
 
