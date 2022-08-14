@@ -22,9 +22,9 @@ npm i
 npm run db
 ```
 
-## or
+### or
 
-## set up database through PSQL terminal
+### set up database through PSQL terminal
 
 ### 1. create user
 
@@ -44,23 +44,17 @@ npm run db
   GRANT ALL PRIVILEGES ON DATABASE dev_db TO dev_user;
 ```
 
-#
-
 ## run migrations
 
 ```bash
 npm run migrations
 ```
 
-#
-
 ## build
 
 ```bash
 npm run build
 ```
-
-#
 
 ## run server
 
@@ -69,8 +63,6 @@ node ./dist/server
 ```
 
 ## Running Tests
-
-#
 
 ### for windows
 
