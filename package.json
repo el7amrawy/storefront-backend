@@ -1,0 +1,40 @@
+{
+  "name": "storefront_backend",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "start": "node src/server.ts",
+    "db": "docker-compose up -d",
+    "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
+    "build": "tsc",
+    "migration": "db-migrate up",
+    "test": "db-migrate db:drop test_db && npm run build && db-migrate db:create test_db && set ENV=test && db-migrate --env test up && jasmine  && set ENV=dev",
+    "test_li": "db-migrate db:drop test_db && npm run build && db-migrate db:create test_db &&  ENV=test && db-migrate --env test up && jasmine  &&  ENV=dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
+    "@types/jasmine": "^4.0.3",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/pg": "^8.6.5",
+    "@types/supertest": "^2.0.12",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "jasmine": "^4.3.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "supertest": "^6.2.4",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^5.0.3"
+  }
+}
