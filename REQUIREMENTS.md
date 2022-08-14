@@ -1,3 +1,35 @@
+# Database Schema
+
+## Tables
+
+- ## users
+  | Column     | Type                   |
+  | ---------- | ---------------------- |
+  | id         | integer                |
+  | first_name | character varying(100) |
+  | last_name  | character varying(100) |
+  | password   | character varying      |
+- ## products
+  | Column   | Type                   |
+  | -------- | ---------------------- |
+  | id       | integer                |
+  | name     | character varying(100) |
+  | price    | integer                |
+  | category | character varying(100) |
+- ## orders
+  | Column  | Type                  |
+  | ------- | --------------------- |
+  | id      | integer               |
+  | status  | character varying(50) |
+  | user_id | bigint                |
+- ## order_products
+  | Column     | Type    |
+  | ---------- | ------- |
+  | id         | integer |
+  | quantity   | integer |
+  | order_id   | bigint  |
+  | product_id | bigint  |
+
 # Routes
 
 - ## users
@@ -6,7 +38,7 @@
 
 # users route
 
-## `/users` --> put
+## `/users` --> post
 
 (create user)
 
@@ -16,7 +48,7 @@ last_name: "[string]",
 password: "[string]"
 }
 
-## `/users` --> post
+## `/users/login` --> post
 
 (authenticate)
 
@@ -35,7 +67,7 @@ password: "[string]"
 
 # products routes
 
-## `/products` --> put
+## `/products` --> post
 
 (create product)
 
@@ -53,7 +85,7 @@ category: "[string]"
 
 (return list of products)
 
-## `/products` --> post
+## `/products/category` --> post
 
 (return list of products filtered by category)
 
@@ -61,7 +93,7 @@ req.body={category: "[string]"}
 
 # orders routes
 
-## `/users/[user_id]/orders` --> put
+## `/users/[user_id]/orders` --> post
 
 (create order)
 
@@ -73,7 +105,7 @@ req.body={category: "[string]"}
 
 (return order)
 
-## `/users/[user_id]/orders/[order_id]/products` --> put
+## `/users/[user_id]/orders/[order_id]/products` --> post
 
 (add product to an order)
 

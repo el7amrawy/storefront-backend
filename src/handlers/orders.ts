@@ -73,9 +73,9 @@ const userOrders = async (req: Request, res: Response) => {
 const orederRoutes = Router();
 
 orederRoutes.get("/:userId/orders", verifyAuthToken, index);
-orederRoutes.put("/:userId/orders/", verifyAuthToken, create);
+orederRoutes.post("/:userId/orders/", verifyAuthToken, create);
 orederRoutes.get("/:userId/orders/:orderId", verifyAuthToken, show);
-orederRoutes.put(
+orederRoutes.post(
   "/:userId/orders/:orderId/products",
   verifyAuthToken,
   addProduct

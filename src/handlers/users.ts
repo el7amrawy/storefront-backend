@@ -70,7 +70,7 @@ userRoutes.use("/", orederRoutes);
 
 userRoutes.get("/", verifyAuthToken, index);
 userRoutes.get("/:userId", verifyAuthToken, show);
-userRoutes.post("/", authenticate);
-userRoutes.put("/", create);
+userRoutes.post("/login", authenticate);
+userRoutes.post("/", create);
 
 export default userRoutes;

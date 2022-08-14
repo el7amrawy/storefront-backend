@@ -22,14 +22,14 @@ let order_id: number;
 
 describe("/orders endpoint tests", () => {
   it("create order", async () => {
-    await request.put("/users").send(user);
+    await request.post("/users").send(user);
     await request
-      .put("/products")
+      .post("/products")
       .set({ Authorization: `test ${token}` })
       .send(product);
 
     const result = await request
-      .put("/users/1/orders")
+      .post("/users/1/orders")
       .set({ Authorization: `test ${token}` });
 
     expect(result.body.status.length).toBeGreaterThan(0);
@@ -56,7 +56,7 @@ describe("/orders endpoint tests", () => {
 
   it("add product", async () => {
     const result = await request
-      .put(`/users/1/orders/${order_id}/products`)
+      .post(`/users/1/orders/${order_id}/products`)
       .send({
         quantity: 5,
         product_id: 1,

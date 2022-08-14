@@ -43,7 +43,7 @@ npm run db
 ## run migrations
 
 ```bash
-npm run migrations
+npm run migration
 ```
 
 ## build

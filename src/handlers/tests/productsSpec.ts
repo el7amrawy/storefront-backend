@@ -15,7 +15,7 @@ let id: string;
 describe("/products endpoint tests", () => {
   it("expect server to create a product", async () => {
     const res = await req
-      .put("/products")
+      .post("/products")
       .set({ Authorization: `test ${token}` })
       .send(product);
 
@@ -37,7 +37,7 @@ describe("/products endpoint tests", () => {
 
   it("expect server to return list of products filtered by category", async () => {
     const res = await req
-      .post("/products")
+      .post("/products/category")
       .send({ category: product.category });
 
     expect(res.body.length).toBeGreaterThan(0);

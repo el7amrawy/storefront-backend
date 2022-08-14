@@ -12,7 +12,7 @@ describe("/users endpoint tests", () => {
   };
   let id: number;
   it("expect server to create a user", async () => {
-    const res = await request.put("/users").send(user);
+    const res = await request.post("/users").send(user);
 
     expect(res.body.user).toBeDefined;
     id = res.body.user.id;
@@ -21,7 +21,7 @@ describe("/users endpoint tests", () => {
   let token: string;
 
   it("expect server to return a token", async () => {
-    const res = await request.post("/users").send({
+    const res = await request.post("/users/login").send({
       id: id,
       password: user.password,
     });

@@ -67,7 +67,7 @@ const productsRoutes = Router();
 
 productsRoutes.get("/", index);
 productsRoutes.get("/:id", show);
-productsRoutes.put("/", verifyAuthToken, create);
-productsRoutes.post("/", productsByCategory);
+productsRoutes.post("/", verifyAuthToken, create);
+productsRoutes.post("/category", productsByCategory);
 
 export default productsRoutes;
