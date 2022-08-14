@@ -14,8 +14,6 @@
 npm i
 ```
 
-#
-
 ## run database on docker
 
 ```bash
