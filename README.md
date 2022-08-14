@@ -71,3 +71,25 @@ node ./dist/server
 ```bash
   npm run test_li
 ```
+
+## environment variables
+
+POSTGRES_HOST=localhost
+
+POSTGRES_DB=dev_db
+
+POSTGRES_USER=dev_user
+
+POSTGRES_PASSWORD=pass321pass
+
+POSTGRES_PORT=5432
+
+BCRYPT_PASSWORD=bnmjkdshj
+
+SALT_ROUNDS=9
+
+TOKEN_SECRET=nmbmahshvdv
+
+ENV=dev
+
+POSTGRES_TEST_DB=test_db
