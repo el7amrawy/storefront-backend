@@ -6,8 +6,6 @@
 
 ### database --> `5432`
 
-#
-
 ## install
 
 ```bash
